@@ -3,5 +3,5 @@
  * @return {number}
  */
 var findNumbers = function(nums) {
-    return nums.filter((i) => i.toString().length % 2 === 0).length
+    return nums.filter((i) => i.toString().length % 2 === 0).length;
 };
