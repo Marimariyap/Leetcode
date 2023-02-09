@@ -3,16 +3,7 @@
  * @return {number}
  */
 var differenceOfSum = function(nums) {
-    let sum = 0;
-    let arr = 0;
-    for (var i = 0; i < nums.length; i++) {
-        sum += nums[i];
-    }
-
-    arr = [...nums.join("")];
-
-    for (var i = 0; i < arr.length; i++) {
-        sum -= +arr[i];
-    }
-    return sum;
+    let sum_1 = nums.reduce((a, c) => a + c, 0);
+    let sum_2 = nums.join("").split("").reduce((a, c) => a + +c, 0);
+    return sum_1 - sum_2;
 };
