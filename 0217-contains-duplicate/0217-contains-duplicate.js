@@ -3,5 +3,15 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    return nums.length !== new Set(nums).size;
+    let numsMap = new Map();
+
+    for (var i = 0; i < nums.length; i++) {
+        if (numsMap[nums[i]]) {
+            numsMap[nums[i]]++;
+            return true;
+        } else {
+            numsMap[nums[i]] = 1;
+        }
+    }
+    return false;
 };
