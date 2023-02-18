@@ -2,11 +2,9 @@
  * @param {number[]} nums
  * @return {number}
  */
-var missingNumber = function(nums) {
-    let arr = [];
-
-    for (var i = 0; i <= nums.length; i++) {
-        arr.push(i);
-    }
-    return arr.reduce((a, c) => a + c, 0) - nums.reduce((a, c) => a + c, 0);
+var missingNumber = function (nums) {
+    const n = nums.length;
+    const Sum = n * (n + 1) / 2;
+    const numsSum = nums.reduce((acc, val) => acc + val, 0);
+    return Sum - numsSum;
 };
