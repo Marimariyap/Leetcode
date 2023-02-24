@@ -3,12 +3,15 @@
  * @return {number}
  */
 var thirdMax = function(nums) {
-    nums = Array.from(new Set(nums)).sort((a, b) => a - b);
-    if (nums.length >= 3) {
-        nums = nums[nums.length - 3];
-        return nums;
+    let set = new Set(nums);
+    const max_1 = Math.max(...set);
+
+    if(set.size<3){
+        return max_1;
     } else {
-        nums = nums[nums.length - 1];
-        return nums;
+        set.delete(max_1);
+        const max_2 = Math.max(...set);
+        set.delete(max_2);
+        return Math.max(...set);
     }
-};
+}
